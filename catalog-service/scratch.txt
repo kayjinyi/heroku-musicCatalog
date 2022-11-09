@@ -1,0 +1,5 @@
+mysql://ik79yr5dq0y5l0ee:e3how5z2g9q46fv7@o2olb7w3xv09alub.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/vw811bnsd43w40be
+hostname:o2olb7w3xv09alub.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+SPRING_DATASOURCE_USERNAME:ik79yr5dq0y5l0ee
+SPRING_DATASOURCE_PASSWORD:e3how5z2g9q46fv7
+SPRING_DATASOURCE_URL:jdbc:mysql://o2olb7w3xv09alub.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/vw811bnsd43w40be
