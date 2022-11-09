@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,13 +35,13 @@ public class TrackController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public Track addTrack(@RequestBody Track track){
+    public Track addTrack(@RequestBody @Valid Track track){
         return trackRepository.save(track);
     }
 
     @PutMapping()
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateTrack(@RequestBody Track track){
+    public void updateTrack(@RequestBody @Valid Track track){
         trackRepository.save(track);
     }
 

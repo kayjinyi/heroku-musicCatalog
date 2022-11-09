@@ -9,6 +9,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -33,7 +34,7 @@ public class Album {
     private LocalDate releaseDate;
 
     @Column(name = "label_id")
-    private BigDecimal labelId;
+    private Integer labelId;
 
     @Column(name = "list_price")
     private BigDecimal listPrice;
@@ -41,7 +42,7 @@ public class Album {
     public Album() {
     }
 
-    public Album(Integer id, String title, Integer artistId, LocalDate releaseDate, BigDecimal labelId, BigDecimal listPrice) {
+    public Album(Integer id, String title, Integer artistId, LocalDate releaseDate, Integer labelId, BigDecimal listPrice) {
         this.id = id;
         this.title = title;
         this.artistId = artistId;
@@ -50,7 +51,7 @@ public class Album {
         this.listPrice = listPrice;
     }
 
-    public Album(String title, Integer artistId, LocalDate releaseDate, BigDecimal labelId, BigDecimal listPrice) {
+    public Album(String title, Integer artistId, LocalDate releaseDate, Integer labelId, BigDecimal listPrice) {
         this.title = title;
         this.artistId = artistId;
         this.releaseDate = releaseDate;
@@ -90,20 +91,20 @@ public class Album {
         this.releaseDate = releaseDate;
     }
 
-    public BigDecimal getLabelId() {
+    public Integer getLabelId() {
         return labelId;
     }
 
-    public void setLabelId(BigDecimal labelId) {
+    public void setLabelId(Integer labelId) {
         this.labelId = labelId;
     }
 
     public BigDecimal getListPrice() {
-        return listPrice;
+        return listPrice.setScale(2, RoundingMode.HALF_UP);
     }
 
     public void setListPrice(BigDecimal listPrice) {
-        this.listPrice = listPrice;
+        this.listPrice = listPrice.setScale(2, RoundingMode.HALF_UP);;
     }
 
     @Override

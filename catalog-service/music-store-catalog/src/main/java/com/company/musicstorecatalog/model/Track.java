@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -22,6 +23,7 @@ public class Track {
     private Integer albumId;
 
     @Column(name = "run_time")
+    @Min(value = 0, message = "the quantity cannot be negative")
     private BigDecimal runTime;
 
     public Track() {

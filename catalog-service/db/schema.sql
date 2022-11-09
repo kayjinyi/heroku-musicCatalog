@@ -22,7 +22,7 @@ create table album (
     release_date date not null,
     label_id int not null,
     list_price decimal(5, 2) not null,
-    index fk_artist_id (album_id),
+    index fk_artist_id (artist_id),
     foreign key (artist_id)
         references artist(artist_id),
     index fk_label_id (label_id),
