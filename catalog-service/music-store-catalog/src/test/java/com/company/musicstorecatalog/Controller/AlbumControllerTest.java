@@ -48,8 +48,8 @@ public class AlbumControllerTest {
 
     @Before
     public void setUp(){
-        inputAlbum = new Album("Bejeweled", 1, LocalDate.of(2022, 10, 14), 1, new BigDecimal(15.99));
-        inputAlbumWithId = new Album(1,"Bejeweled", 1, LocalDate.of(2022, 10, 14), 1, new BigDecimal(15.99));
+        inputAlbum = new Album("Bejeweled", 1, LocalDate.of(2022, 10, 14), 1, new BigDecimal("15.99"));
+        inputAlbumWithId = new Album(1,"Bejeweled", 1, LocalDate.of(2022, 10, 14), 1, new BigDecimal("15.99"));
         outputAlbum = new Album(1,"Bejeweled", 1, LocalDate.of(2022, 10, 14), 1, new BigDecimal("15.99"));
         outputAlbum2 = new Album(5,"Fearless", 1, LocalDate.of(2020, 4, 9), 1, new BigDecimal(20.99));
 
