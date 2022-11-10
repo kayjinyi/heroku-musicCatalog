@@ -1,6 +1,7 @@
 package com.company.musicstorecatalog.repository;
 
 import com.company.musicstorecatalog.model.Artist;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +23,13 @@ public class ArtistRepositoryTest {
     @Before
     public void setUp() throws Exception{
         artistRepository.deleteAll();
+    }
+    @After
+    public void cleanUp() throws Exception{
+
+        artistRepository.deleteAll();
+
+
     }
     @Test
     public void shouldCreateGetAndDeleteArtist() {

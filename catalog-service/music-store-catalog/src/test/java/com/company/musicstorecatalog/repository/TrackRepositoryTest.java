@@ -4,6 +4,7 @@ import com.company.musicstorecatalog.model.Album;
 import com.company.musicstorecatalog.model.Artist;
 import com.company.musicstorecatalog.model.Label;
 import com.company.musicstorecatalog.model.Track;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,6 +46,14 @@ public class TrackRepositoryTest {
         int labelId = labelList.get(0).getId();
         Album newAlbum = new Album("Bejeweled", artistId , LocalDate.of(2022, 10, 14), labelId, new BigDecimal("15.99"));
         newAlbum = albumRepository.save(newAlbum);
+    }
+    @After
+    public void cleanUp() throws Exception{
+        albumRepository.deleteAll();
+        artistRepository.deleteAll();
+        labelRepository.deleteAll();
+        albumRepository.deleteAll();
+
     }
     @Test
     public void shouldCreateGetAndDeleteTrack() {

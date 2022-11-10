@@ -3,6 +3,7 @@ package com.company.musicstorecatalog.repository;
 import com.company.musicstorecatalog.model.Album;
 import com.company.musicstorecatalog.model.Artist;
 import com.company.musicstorecatalog.model.Label;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,6 +43,13 @@ public class AlbumRepositoryTest {
         newLabel = labelRepository.save(newLabel);
 
     }
+    @After
+    public void cleanUp() throws Exception{
+        albumRepository.deleteAll();
+        artistRepository.deleteAll();
+        labelRepository.deleteAll();
+
+    }
     @Test
     public void shouldCreateGetAndDeleteAlbum() {
         List<Artist> artistList = artistRepository.findAll();
@@ -59,6 +67,7 @@ public class AlbumRepositoryTest {
         Optional<Album> shouldBeEmptyOptional = albumRepository.findById(newAlbum.getId());
 
         assertEquals(false, shouldBeEmptyOptional.isPresent());
+
 
     }
 

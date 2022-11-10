@@ -1,6 +1,7 @@
 package com.company.musicstorecatalog.repository;
 
 import com.company.musicstorecatalog.model.Label;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +23,12 @@ public class LabelRepositoryTest {
     @Before
     public void setUp() throws Exception{
         labelRepository.deleteAll();
+    }
+    @After
+    public void cleanUp() throws Exception{
+        labelRepository.deleteAll();
+
+
     }
     @Test
     public void shouldCreateGetAndDeleteLabel() {
